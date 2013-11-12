@@ -100,6 +100,10 @@ $(document).ready(function(){
 		if (currentQuestion === quizLength) {
 			// remove answers click handler and return
 			answers.off();
+
+			// end the quiz
+
+			endQuiz();
 			return;
 		}
 
@@ -113,6 +117,12 @@ $(document).ready(function(){
 			// set the text equal to the answer at the corresponding index of the array of question elements (wut?)
 			$(this).text(array[currentQuestion].answers[index]);
 		});
+	}
+
+	function endQuiz(){
+		question.text("Thanks for playing!");
+		answers.hide();
+		
 	}
 
 	// load the first question on page load
